@@ -25,6 +25,12 @@ namespace Hsinpa.SSE
 
             public float pivot_x;
             public float pivot_y;
+
+            public float bound_width;
+            public float bound_height;
+
+            public float[] vertices;
+            public int[] triangles;
         }
 
 
@@ -48,7 +54,9 @@ namespace Hsinpa.SSE
             public float y;
             public float scale_x;
             public float scale_y;
+            public float rotation;
 
+            public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
     }
 }

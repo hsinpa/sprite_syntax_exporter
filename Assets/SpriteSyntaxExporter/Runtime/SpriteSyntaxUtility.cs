@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using static Hsinpa.SSE.SpriteSyntaxStatic;
 
 
 namespace Hsinpa.SSE {
@@ -29,6 +31,19 @@ namespace Hsinpa.SSE {
         public static string ToBinary(System.Byte[] data)
         {
             return string.Join(" ", data.Select(byt => Convert.ToString(byt, 2).PadLeft(8, '0')));
+        }
+        
+        public static Task SaveJSONFileToPath(string file_name, string raw_json, string json_path, string bjson_path) {
+            string jsonPathFilter = string.Format(json_path, file_name);
+            string bsonPathFilter = string.Format(bjson_path, file_name);
+
+            return Task.WhenAll(
+                //Pure Raw JSON Text
+                File.WriteAllTextAsync(jsonPathFilter, raw_json),
+
+                //Binary
+                File.WriteAllTextAsync(bsonPathFilter, SpriteSyntaxUtility.ToBinary(Encoding.UTF8.GetBytes(raw_json)))
+            );
         }
 
         public static Task<string> FormatJson(string json, string indent = "  ")
