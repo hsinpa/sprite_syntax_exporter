@@ -14,15 +14,14 @@ namespace Hsinpa.SSE {
     public class SpriteSyntaxExporterEditor : EditorWindow
     {
         const string StorePath = "SpriteSyntax";
-        const string FileJSONPath = "{0}.json";
-        const string FileBSONPath = "{0}.bson";
 
         [MenuItem("Assets/Actions/ExportSpriteSyntax")]
         public async static void ExportSpriteSyntax() {
-            PrepareDirectory();
 
-            string jsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath, FileJSONPath);
-            string bsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath, FileBSONPath);
+            SpriteSyntaxUtility.PrepareDirectory(StorePath);
+
+            string jsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath,  SpriteSyntaxStatic.FileJSONPath);
+            string bsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath, SpriteSyntaxStatic.FileBSONPath);
 
             var currentSelections = Selection.objects;
 
@@ -51,7 +50,7 @@ namespace Hsinpa.SSE {
                     File.WriteAllTextAsync(jsonPathFilter, json),
 
                     //Binary
-                    File.WriteAllTextAsync(bsonPathFilter, ToBinary(Encoding.UTF8.GetBytes(json)))
+                    File.WriteAllTextAsync(bsonPathFilter, SpriteSyntaxUtility.ToBinary(Encoding.UTF8.GetBytes(json)))
                 );
             }
 
@@ -86,21 +85,5 @@ namespace Hsinpa.SSE {
             };
         }
 
-        private static void PrepareDirectory() {
-            string root = Application.streamingAssetsPath;
-            string main_directory = Path.Combine(root, StorePath);
-
-            if (!Directory.Exists(Application.streamingAssetsPath)) {
-                Directory.CreateDirectory(root);
-            }
-
-            if (!Directory.Exists(main_directory)) {
-                Directory.CreateDirectory(main_directory);
-            }
-        }
-
-        private static string ToBinary(Byte[] data) {
-            return string.Join(" ", data.Select(byt => Convert.ToString(byt, 2).PadLeft(8, '0')));
-        }
     }
 }
