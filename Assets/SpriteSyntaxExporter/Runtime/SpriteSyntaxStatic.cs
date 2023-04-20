@@ -5,6 +5,8 @@ using UnityEngine;
 namespace Hsinpa.SSE
 {
     public class SpriteSyntaxStatic {
+ 
+       
         public const string FileJSONPath = "{0}.json";
         public const string FileBSONPath = "{0}.bson";
 
@@ -58,5 +60,51 @@ namespace Hsinpa.SSE
 
             public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
+
+        #region Collisoion
+        public enum CollisionType { Line, Rect, Oval, Sphere }
+
+        [System.Serializable]
+        public struct CollisionStruct {
+            public CollisionType collisionType;
+            public float rotation;
+            public string data;
+        }
+
+        [System.Serializable]
+        public struct LineCollision {
+            public float[] point_a;
+            public float[] point_b;
+            public float[] normal;
+        }
+
+        [System.Serializable]
+        public struct RectCollision
+        {
+            public float x;
+            public float y;
+
+            public float height;
+            public float width;
+        }
+
+        [System.Serializable]
+        public struct OvalCollision
+        {
+            public SphereCollision sphere_a;
+            public SphereCollision sphere_b;
+        }
+
+        [System.Serializable]
+        public struct SphereCollision
+        {
+            public float x;
+            public float y;
+            public float radius;
+        }
+
+
+        #endregion
+
     }
 }
