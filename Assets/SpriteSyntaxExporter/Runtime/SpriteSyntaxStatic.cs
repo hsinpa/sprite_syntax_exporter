@@ -73,9 +73,9 @@ namespace Hsinpa.SSE
 
         [System.Serializable]
         public struct LineCollision {
-            public float[] point_a;
-            public float[] point_b;
-            public float[] normal;
+            public Vector2 point_a;
+            public Vector2 point_b;
+            public Vector2 normal;
         }
 
         [System.Serializable]
