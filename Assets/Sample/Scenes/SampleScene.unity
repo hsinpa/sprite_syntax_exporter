@@ -243,14 +243,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949941883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.17382012, w: 0.98477745}
   m_LocalPosition: {x: 1.363, y: 3.646, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.02}
 --- !u!114 &949941886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3ca5b31b222b441be04b91a123ab5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   lineCollision:
     point_a: {x: 0, y: 0}
     point_b: {x: 0, y: 0}
@@ -348,13 +348,13 @@ MonoBehaviour:
     width: 0
   ovalCollision:
     sphere_a:
-      x: 0
+      x: -0.95
       y: 0
-      radius: 0
+      radius: 0.43
     sphere_b:
       x: 0
-      y: 0
-      radius: 0
+      y: 0.3
+      radius: 0.37
   sphereCollision:
     x: 2341
     y: 1234
@@ -443,6 +443,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821649486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821649488}
+  - component: {fileID: 1821649487}
+  m_Layer: 0
+  m_Name: spirte_338 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1821649487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821649486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3ca5b31b222b441be04b91a123ab5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  lineCollision:
+    point_a: {x: -0.5, y: 0}
+    point_b: {x: 0.5, y: 0}
+    normal: {x: 0, y: 0}
+  rectCollision:
+    x: 0
+    y: 0
+    height: 0
+    width: 0
+  ovalCollision:
+    sphere_a:
+      x: 0
+      y: 0
+      radius: 0
+    sphere_b:
+      x: 0
+      y: 0
+      radius: 0
+  sphereCollision:
+    x: -0.04
+    y: 0.71
+    radius: 0.52
+--- !u!4 &1821649488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821649486}
+  m_LocalRotation: {x: -0, y: 0, z: -0.3508614, w: -0.93642735}
+  m_LocalPosition: {x: 2.31, y: -0.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -318.92}
 --- !u!1 &2021328519
 GameObject:
   m_ObjectHideFlags: 0

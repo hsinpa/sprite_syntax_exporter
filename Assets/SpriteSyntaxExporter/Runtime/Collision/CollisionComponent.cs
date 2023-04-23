@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Hsinpa.SSE
 {
@@ -109,11 +110,40 @@ namespace Hsinpa.SSE
         }
 
         private void DrawOvalGizmos(SpriteSyntaxStatic.OvalCollision ovalCollision) {
+            Gizmos.color = Color.red;
+            var t_position = this.transform.position;
+            var m = Matrix4x4.Rotate(this.transform.rotation);
 
+            //First Sphere
+            Vector3 sphere_a = new Vector3(ovalCollision.sphere_a.x, ovalCollision.sphere_a.y, 0);
+            Vector3 sphere_a_pos = m.MultiplyPoint3x4(sphere_a) + t_position;
+            Gizmos.DrawWireSphere(sphere_a_pos, ovalCollision.sphere_a.radius);
+
+            //Second Sphere
+            Vector3 sphere_b = new Vector3(ovalCollision.sphere_b.x, ovalCollision.sphere_b.y, 0);
+            Vector3 sphere_b_pos = m.MultiplyPoint3x4(sphere_b) + t_position;
+            Gizmos.DrawWireSphere(sphere_b_pos, ovalCollision.sphere_b.radius);
+
+            //Top Line
+            Vector3 line_point_a = m.MultiplyPoint3x4(sphere_a + (Vector3.up * ovalCollision.sphere_a.radius)) + t_position;
+            Vector3 line_point_b = m.MultiplyPoint3x4(sphere_a + (-Vector3.up * ovalCollision.sphere_a.radius)) + t_position;
+            Vector3 line_point_c = m.MultiplyPoint3x4(sphere_b + (Vector3.up * ovalCollision.sphere_b.radius)) + t_position;
+            Vector3 line_point_d = m.MultiplyPoint3x4(sphere_b + (-Vector3.up * ovalCollision.sphere_b.radius)) + t_position;
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(line_point_a, line_point_b);
+            Gizmos.DrawLine(line_point_a, line_point_c);
+            Gizmos.DrawLine(line_point_c, line_point_d);
+            Gizmos.DrawLine(line_point_b, line_point_d);
         }
 
         private void DrawSphereGizmos(SpriteSyntaxStatic.SphereCollision sphereCollision) {
+            Gizmos.color = Color.red;
+            var m = Matrix4x4.Rotate(this.transform.rotation);
 
+            Vector3 sphere_a = new Vector3(sphereCollision.x, sphereCollision.y, 0);
+            Vector3 sphere_a_pos = m.MultiplyPoint3x4(sphere_a) + this.transform.position;
+            Gizmos.DrawWireSphere(sphere_a_pos, sphereCollision.radius);
         }
     }
 }
