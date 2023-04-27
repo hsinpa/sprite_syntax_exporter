@@ -14,6 +14,8 @@ namespace Hsinpa.SSE
         public struct SpriteSyntaxStruct {
             public string name;
             public SpriteStruct[] sprites;
+            public int width;
+            public int height;
         }
 
         [System.Serializable]

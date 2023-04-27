@@ -49,6 +49,8 @@ namespace Hsinpa.SSE {
 
                 SpriteSyntaxStatic.SpriteSyntaxStruct spriteSyntaxStruct = await ProcessSpriteData(spriteDict, dataProvider);
                 spriteSyntaxStruct.name = targetTexture.name;
+                spriteSyntaxStruct.width = targetTexture.width;
+                spriteSyntaxStruct.height = targetTexture.height;
 
                 string json = JsonUtility.ToJson(spriteSyntaxStruct);
 
