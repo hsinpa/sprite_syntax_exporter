@@ -55,6 +55,7 @@ namespace Hsinpa.SSE {
                 string json = JsonUtility.ToJson(spriteSyntaxStruct);
 
                 await SpriteSyntaxUtility.SaveJSONFileToPath(spriteSyntaxStruct.name, json, jsonFullPath, bsonFullPath);
+                await SpriteLayoutExporterEditor.SaveAssetWithSpriteEditorSRP(spriteSyntaxStruct.name, json);
             }
 
             AssetDatabase.Refresh();

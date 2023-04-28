@@ -25,6 +25,7 @@ namespace Hsinpa.SSE
                 return;
             }
 
+
             string jsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath, SpriteSyntaxStatic.FileJSONPath);
             string bsonFullPath = Path.Combine(Application.streamingAssetsPath, StorePath, SpriteSyntaxStatic.FileBSONPath);
 
@@ -51,7 +52,9 @@ namespace Hsinpa.SSE
             sceneLayoutStruct.name = scene_name;
             sceneLayoutStruct.spriteLayoutStructs = layouts;
 
-            await SpriteSyntaxUtility.SaveJSONFileToPath(scene_name, JsonUtility.ToJson(sceneLayoutStruct), jsonFullPath, bsonFullPath);
+            string json_string = JsonUtility.ToJson(sceneLayoutStruct);
+            await SpriteSyntaxUtility.SaveJSONFileToPath(scene_name, json_string, jsonFullPath, bsonFullPath);
+            await SaveAssetWithSpriteEditorSRP(scene_name, json_string);
 
             AssetDatabase.Refresh();
         }
@@ -69,9 +72,35 @@ namespace Hsinpa.SSE
             spriteLayoutStruct.scale_x = spriteLayoutComponent.transform.localScale.x;
             spriteLayoutStruct.scale_y = spriteLayoutComponent.transform.localScale.y;
 
+            spriteLayoutStruct.flip_x = sprite.flipX ? -1 : 1;
+            spriteLayoutStruct.flip_y = sprite.flipY ? -1 : 1;
+
             spriteLayoutStruct.rotation = spriteLayoutComponent.transform.eulerAngles.z * Mathf.Deg2Rad;
 
             return spriteLayoutStruct;
-        } 
+        }
+
+        public static Task SaveAssetWithSpriteEditorSRP(string file_tag, string json_string) {
+            string[] guids = AssetDatabase.FindAssets("t:SpriteEditorSRP");
+            Task[] tasks = new Task[guids.Length];
+
+            int index = 0;
+            foreach (string guid in guids)
+            {
+
+                string path = (AssetDatabase.GUIDToAssetPath(guid));
+
+                SpriteEditorSRP spriteEditorSRP = (SpriteEditorSRP) AssetDatabase.LoadAssetAtPath(path, typeof(SpriteEditorSRP));
+
+                string jsonFullPath = Path.Combine(spriteEditorSRP.editorStruct.ExportPath, SpriteSyntaxStatic.FileJSONPath);
+                string bsonFullPath = Path.Combine(spriteEditorSRP.editorStruct.ExportPath, SpriteSyntaxStatic.FileBSONPath);
+
+                tasks[index] = SpriteSyntaxUtility.SaveJSONFileToPath(file_tag, json_string, jsonFullPath, bsonFullPath);
+
+                index++;
+            }
+
+            return Task.WhenAll(tasks);
+        }
     }
 }

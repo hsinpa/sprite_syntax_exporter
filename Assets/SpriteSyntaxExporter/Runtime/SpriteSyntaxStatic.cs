@@ -60,6 +60,9 @@ namespace Hsinpa.SSE
             public float scale_y;
             public float rotation;
 
+            public int flip_x;
+            public int flip_y;
+
             public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
 
