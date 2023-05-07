@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SpriteEditorSRP
   m_EditorClassIdentifier: 
   editorStruct:
-    ExportPath: D:\Javascript\project_e_self_site\public\image
+    ExportPath: W:\CodeStation\Rust\rust_sprite_canvas\public\config

@@ -49,6 +49,10 @@ namespace Hsinpa.SSE
 
             sceneLayoutStruct.frame_height = frame_height;
             sceneLayoutStruct.frame_width = frame_width;
+
+            sceneLayoutStruct.screen_height = Screen.height;
+            sceneLayoutStruct.screen_width = Screen.width;
+
             sceneLayoutStruct.name = scene_name;
             sceneLayoutStruct.spriteLayoutStructs = layouts;
 
@@ -65,6 +69,7 @@ namespace Hsinpa.SSE
 
             spriteLayoutStruct.sprite_name = sprite.sprite.name;
             spriteLayoutStruct.texture_name = sprite.sprite.texture.name;
+            Debug.Log(sprite.size);
 
             spriteLayoutStruct.x = spriteLayoutComponent.transform.position.x;
             spriteLayoutStruct.y = spriteLayoutComponent.transform.position.y;

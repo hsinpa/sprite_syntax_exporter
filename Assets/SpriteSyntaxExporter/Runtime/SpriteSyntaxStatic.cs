@@ -45,6 +45,9 @@ namespace Hsinpa.SSE
             public float frame_height;
             public float frame_width;
 
+            public float screen_height;
+            public float screen_width;
+
             public SpriteLayoutStruct[] spriteLayoutStructs;
         }
 
