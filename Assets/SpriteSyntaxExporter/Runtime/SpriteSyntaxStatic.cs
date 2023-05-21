@@ -66,6 +66,9 @@ namespace Hsinpa.SSE
             public int flip_x;
             public int flip_y;
 
+            public int tag;
+            public string properties;
+
             public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
 

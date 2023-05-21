@@ -220,7 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880b72186ec181c40b2c26721653896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Properties: 
+  Properties: "{\r\n  \"Friend\": \"dsd\",\r\n  \"dsd\": 33,\r\n  \"ee\": [\r\n   
+    \"dd\"\r\n  ]\r\n}"
 --- !u!1 &71648965
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +233,7 @@ GameObject:
   - component: {fileID: 71648967}
   - component: {fileID: 71648966}
   - component: {fileID: 71648968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pinball_flipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 1651855250}
   - component: {fileID: 1651855249}
   - component: {fileID: 1651855251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pinball_flipper (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

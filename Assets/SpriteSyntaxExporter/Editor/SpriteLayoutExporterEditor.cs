@@ -69,7 +69,6 @@ namespace Hsinpa.SSE
 
             spriteLayoutStruct.sprite_name = sprite.sprite.name;
             spriteLayoutStruct.texture_name = sprite.sprite.texture.name;
-            Debug.Log(sprite.size);
 
             spriteLayoutStruct.x = spriteLayoutComponent.transform.position.x;
             spriteLayoutStruct.y = spriteLayoutComponent.transform.position.y;
@@ -81,6 +80,11 @@ namespace Hsinpa.SSE
             spriteLayoutStruct.flip_y = sprite.flipY ? -1 : 1;
 
             spriteLayoutStruct.rotation = spriteLayoutComponent.transform.eulerAngles.z * Mathf.Deg2Rad;
+
+            spriteLayoutStruct.tag = sprite.gameObject.layer;
+            spriteLayoutStruct.properties = spriteLayoutComponent.MinimizeProperties;
+
+            Debug.Log(spriteLayoutComponent.MinimizeProperties);
 
             return spriteLayoutStruct;
         }
