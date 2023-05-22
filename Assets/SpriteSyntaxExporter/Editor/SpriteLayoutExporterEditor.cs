@@ -42,9 +42,11 @@ namespace Hsinpa.SSE
 
             int c_lens = comps.Length;
             SpriteSyntaxStatic.SpriteLayoutStruct[] layouts = new SpriteSyntaxStatic.SpriteLayoutStruct[c_lens];
+            System.Random r = new System.Random();
 
             for (int i = 0; i < c_lens; i++) {
-                layouts[i] = ProcessSpriteLayoutComponent(comps[i]);
+                int random = r.Next(1000, 100000);
+                layouts[i] = ProcessSpriteLayoutComponent(random, comps[i]);
             }
 
             sceneLayoutStruct.frame_height = frame_height;
@@ -63,10 +65,12 @@ namespace Hsinpa.SSE
             AssetDatabase.Refresh();
         }
 
-        private static SpriteSyntaxStatic.SpriteLayoutStruct ProcessSpriteLayoutComponent(SpriteLayoutComponent spriteLayoutComponent) {
+        private static SpriteSyntaxStatic.SpriteLayoutStruct ProcessSpriteLayoutComponent(int id, SpriteLayoutComponent spriteLayoutComponent) {
             SpriteSyntaxStatic.SpriteLayoutStruct spriteLayoutStruct = new SpriteSyntaxStatic.SpriteLayoutStruct();
             SpriteRenderer sprite = spriteLayoutComponent.GetComponent<SpriteRenderer>();
+            CollisionComponent collider = spriteLayoutComponent.GetComponent<CollisionComponent>();
 
+            spriteLayoutStruct.id = id;
             spriteLayoutStruct.sprite_name = sprite.sprite.name;
             spriteLayoutStruct.texture_name = sprite.sprite.texture.name;
 
@@ -84,7 +88,9 @@ namespace Hsinpa.SSE
             spriteLayoutStruct.tag = sprite.gameObject.layer;
             spriteLayoutStruct.properties = spriteLayoutComponent.MinimizeProperties;
 
-            Debug.Log(spriteLayoutComponent.MinimizeProperties);
+            if (collider != null) {
+                spriteLayoutStruct.collisionStruct = collider.GetCollisionStruct();
+            }
 
             return spriteLayoutStruct;
         }

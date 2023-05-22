@@ -54,6 +54,7 @@ namespace Hsinpa.SSE
         [System.Serializable]
         public struct SpriteLayoutStruct
         {
+            public int id;
             public string texture_name;
             public string sprite_name;
 
@@ -68,6 +69,7 @@ namespace Hsinpa.SSE
 
             public int tag;
             public string properties;
+            public CollisionStruct collisionStruct;
 
             public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
@@ -78,7 +80,6 @@ namespace Hsinpa.SSE
         [System.Serializable]
         public struct CollisionStruct {
             public CollisionType collisionType;
-            public float rotation;
             public string data;
         }
 
@@ -86,7 +87,6 @@ namespace Hsinpa.SSE
         public struct LineCollision {
             public Vector2 point_a;
             public Vector2 point_b;
-            public Vector2 normal;
         }
 
         [System.Serializable]

@@ -24,8 +24,6 @@ namespace Hsinpa.SSE
         public SpriteSyntaxStatic.CollisionStruct GetCollisionStruct() {
             SpriteSyntaxStatic.CollisionStruct collisionStruct = new SpriteSyntaxStatic.CollisionStruct();
             collisionStruct.collisionType = type;
-
-            collisionStruct.rotation = gameObject.transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
             collisionStruct.data = CollisionTypeOpt<object, string>(type, (c) => JsonUtility.ToJson(c));
 
             return collisionStruct;
