@@ -275,6 +275,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pinball
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35570f1d4ad771e4bbfa45894f86daac
+      internalID: 987345576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -286,6 +307,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      pinball: 987345576
       pinball_bumper: -719237994
       pinball_drop_target_a: 946708488
       pinball_drop_target_b: 911716408
