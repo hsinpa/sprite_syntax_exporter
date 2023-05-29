@@ -269,8 +269,9 @@ GameObject:
   - component: {fileID: 71648966}
   - component: {fileID: 71648968}
   - component: {fileID: 71648969}
-  m_Layer: 7
-  m_Name: pinball_flipper_left_1
+  - component: {fileID: 71648970}
+  m_Layer: 6
+  m_Name: pinball_flipper_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880b72186ec181c40b2c26721653896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Properties: 
+  Properties: "{\r\n  \"max_rotation\": 0.523\r\n}"
 --- !u!114 &71648969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +391,23 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+--- !u!114 &71648970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71648965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0134411846b808349b1655ab55c68c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint:
+    max_rotation: 20
+    min_rotation: -20
+    max_speed: 0
+    min_speed: 0
 --- !u!1 &539099836
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,8 +904,9 @@ GameObject:
   - component: {fileID: 1007597050}
   - component: {fileID: 1007597049}
   - component: {fileID: 1007597048}
+  - component: {fileID: 1007597052}
   m_Layer: 7
-  m_Name: pinball_flipper_left_1 (1)
+  m_Name: pinball_flipper_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880b72186ec181c40b2c26721653896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Properties: 
+  Properties: "{\r\n  \"max_rotation\": -0.523\r\n}"
 --- !u!212 &1007597050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1007,6 +1026,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
+--- !u!114 &1007597052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007597047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0134411846b808349b1655ab55c68c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint:
+    max_rotation: 20
+    min_rotation: -20
+    max_speed: 0
+    min_speed: 0
 --- !u!1 &1741472729
 GameObject:
   m_ObjectHideFlags: 0

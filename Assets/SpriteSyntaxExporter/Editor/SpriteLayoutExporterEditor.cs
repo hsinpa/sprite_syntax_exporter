@@ -69,6 +69,7 @@ namespace Hsinpa.SSE
             SpriteSyntaxStatic.SpriteLayoutStruct spriteLayoutStruct = new SpriteSyntaxStatic.SpriteLayoutStruct();
             SpriteRenderer sprite = spriteLayoutComponent.GetComponent<SpriteRenderer>();
             CollisionComponent collider = spriteLayoutComponent.GetComponent<CollisionComponent>();
+            CollisionConstraint constraint = spriteLayoutComponent.GetComponent<CollisionConstraint>();
 
             spriteLayoutStruct.id = id;
             spriteLayoutStruct.sprite_name = sprite.sprite.name;
@@ -90,6 +91,10 @@ namespace Hsinpa.SSE
 
             if (collider != null) {
                 spriteLayoutStruct.collisionStruct = collider.GetCollisionStruct();
+            }
+
+            if (constraint != null) {
+                spriteLayoutStruct.constraintStruct = constraint.GetConstraintStruct();
             }
 
             return spriteLayoutStruct;

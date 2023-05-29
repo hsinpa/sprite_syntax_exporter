@@ -70,6 +70,7 @@ namespace Hsinpa.SSE
             public int tag;
             public string properties;
             public CollisionStruct collisionStruct;
+            public ConstraintStruct constraintStruct;
 
             public bool is_valid => !string.IsNullOrEmpty(texture_name) && !string.IsNullOrEmpty(sprite_name);
         }
@@ -114,8 +115,18 @@ namespace Hsinpa.SSE
             public float radius;
         }
 
+        [System.Serializable]
+        public struct ConstraintStruct
+        {
+            public float max_rotation;
+            public float min_rotation;
 
+            public float max_x;
+            public float min_x;
+
+            public float max_y;
+            public float min_y;
+        }
         #endregion
-
     }
 }
