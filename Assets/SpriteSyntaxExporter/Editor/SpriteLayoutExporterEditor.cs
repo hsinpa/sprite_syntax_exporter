@@ -84,7 +84,7 @@ namespace Hsinpa.SSE
             spriteLayoutStruct.flip_x = sprite.flipX ? -1 : 1;
             spriteLayoutStruct.flip_y = sprite.flipY ? -1 : 1;
 
-            spriteLayoutStruct.rotation = spriteLayoutComponent.transform.eulerAngles.z * Mathf.Deg2Rad;
+            spriteLayoutStruct.rotation = -spriteLayoutComponent.transform.eulerAngles.z * Mathf.Deg2Rad;
 
             spriteLayoutStruct.tag = sprite.gameObject.layer;
             spriteLayoutStruct.properties = spriteLayoutComponent.MinimizeProperties;

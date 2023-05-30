@@ -406,8 +406,13 @@ MonoBehaviour:
   constraint:
     max_rotation: 20
     min_rotation: -20
-    max_speed: 0
-    min_speed: 0
+    rest_point: -20
+    max_x: 0
+    min_x: 0
+    rest_x: 0
+    max_y: 0
+    min_y: 0
+    rest_y: 0
 --- !u!1 &539099836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,8 +1046,13 @@ MonoBehaviour:
   constraint:
     max_rotation: 20
     min_rotation: -20
-    max_speed: 0
-    min_speed: 0
+    rest_point: 20
+    max_x: 0
+    min_x: 0
+    rest_x: 0
+    max_y: 0
+    min_y: 0
+    rest_y: 0
 --- !u!1 &1741472729
 GameObject:
   m_ObjectHideFlags: 0

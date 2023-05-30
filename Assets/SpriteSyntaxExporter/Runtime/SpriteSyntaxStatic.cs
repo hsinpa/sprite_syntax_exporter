@@ -120,12 +120,15 @@ namespace Hsinpa.SSE
         {
             public float max_rotation;
             public float min_rotation;
+            public float rest_point;
 
             public float max_x;
             public float min_x;
+            public float rest_x;
 
             public float max_y;
             public float min_y;
+            public float rest_y;
         }
         #endregion
     }
