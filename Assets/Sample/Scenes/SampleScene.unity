@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 38568793}
   - component: {fileID: 38568795}
   - component: {fileID: 38568796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pinball_bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539099836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.732, y: -2.549, z: 0}
+  m_LocalPosition: {x: -0.11, y: 3.78, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 642506352}
   - component: {fileID: 642506351}
   - component: {fileID: 642506350}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pinball_bumper (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 833155828}
   - component: {fileID: 833155830}
   - component: {fileID: 833155831}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pinball_shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664670699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.905, y: -2.374, z: 0}
+  m_LocalPosition: {x: 0.86, y: 2.67, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 1741472732}
   - component: {fileID: 1741472731}
   - component: {fileID: 1741472730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pinball_bumper (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 1965948782}
   - component: {fileID: 1965948781}
   - component: {fileID: 1965948780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pinball_side_bumper (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1987434684}
   - component: {fileID: 1987434686}
   - component: {fileID: 1987434687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pinball_side_bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

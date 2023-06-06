@@ -14,9 +14,9 @@ TagManager:
   - Flipper_Left
   - Flipper_Right
   - Ball
-  - Bumper
+  - ShereBumper
+  - LineBumper
   - Shooter
-  - 
   - 
   - 
   - 
