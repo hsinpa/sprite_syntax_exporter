@@ -55,6 +55,7 @@ namespace Hsinpa.SSE
         public struct SpriteLayoutStruct
         {
             public int id;
+            public string object_name;
             public string texture_name;
             public string sprite_name;
 

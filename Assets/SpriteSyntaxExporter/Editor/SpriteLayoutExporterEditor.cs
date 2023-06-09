@@ -42,11 +42,9 @@ namespace Hsinpa.SSE
 
             int c_lens = comps.Length;
             SpriteSyntaxStatic.SpriteLayoutStruct[] layouts = new SpriteSyntaxStatic.SpriteLayoutStruct[c_lens];
-            System.Random r = new System.Random();
 
             for (int i = 0; i < c_lens; i++) {
-                int random = r.Next(1000, 100000);
-                layouts[i] = ProcessSpriteLayoutComponent(random, comps[i]);
+                layouts[i] = ProcessSpriteLayoutComponent(comps[i]);
             }
 
             sceneLayoutStruct.frame_height = frame_height;
@@ -65,15 +63,14 @@ namespace Hsinpa.SSE
             AssetDatabase.Refresh();
         }
 
-        private static SpriteSyntaxStatic.SpriteLayoutStruct ProcessSpriteLayoutComponent(int id, SpriteLayoutComponent spriteLayoutComponent) {
+        private static SpriteSyntaxStatic.SpriteLayoutStruct ProcessSpriteLayoutComponent(SpriteLayoutComponent spriteLayoutComponent) {
             SpriteSyntaxStatic.SpriteLayoutStruct spriteLayoutStruct = new SpriteSyntaxStatic.SpriteLayoutStruct();
             SpriteRenderer sprite = spriteLayoutComponent.GetComponent<SpriteRenderer>();
             CollisionComponent collider = spriteLayoutComponent.GetComponent<CollisionComponent>();
             CollisionConstraint constraint = spriteLayoutComponent.GetComponent<CollisionConstraint>();
 
-            spriteLayoutStruct.id = id;
-            spriteLayoutStruct.sprite_name = sprite.sprite.name;
-            spriteLayoutStruct.texture_name = sprite.sprite.texture.name;
+            spriteLayoutStruct.id = spriteLayoutComponent.gameObject.GetHashCode();
+            spriteLayoutStruct.object_name = spriteLayoutComponent.name;
 
             spriteLayoutStruct.x = spriteLayoutComponent.transform.position.x;
             spriteLayoutStruct.y = spriteLayoutComponent.transform.position.y;
@@ -81,18 +78,26 @@ namespace Hsinpa.SSE
             spriteLayoutStruct.scale_x = spriteLayoutComponent.transform.localScale.x;
             spriteLayoutStruct.scale_y = spriteLayoutComponent.transform.localScale.y;
 
-            spriteLayoutStruct.flip_x = sprite.flipX ? -1 : 1;
-            spriteLayoutStruct.flip_y = sprite.flipY ? -1 : 1;
-
             spriteLayoutStruct.rotation = -spriteLayoutComponent.transform.eulerAngles.z * Mathf.Deg2Rad;
 
-            spriteLayoutStruct.tag = sprite.gameObject.layer;
+            spriteLayoutStruct.tag = spriteLayoutComponent.gameObject.layer;
             spriteLayoutStruct.properties = spriteLayoutComponent.MinimizeProperties;
 
+            //Sprite Renderer Related
+            if (sprite != null)
+            {
+                spriteLayoutStruct.sprite_name = sprite.sprite.name;
+                spriteLayoutStruct.texture_name = sprite.sprite.texture.name;
+                spriteLayoutStruct.flip_x = sprite.flipX ? -1 : 1;
+                spriteLayoutStruct.flip_y = sprite.flipY ? -1 : 1;
+            }
+
+            //Collision Related
             if (collider != null) {
                 spriteLayoutStruct.collisionStruct = collider.GetCollisionStruct();
             }
 
+            //Collision Constraint Related
             if (constraint != null) {
                 spriteLayoutStruct.constraintStruct = constraint.GetConstraintStruct();
             }
