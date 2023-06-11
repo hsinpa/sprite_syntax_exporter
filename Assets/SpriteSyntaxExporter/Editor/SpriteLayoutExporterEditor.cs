@@ -50,9 +50,6 @@ namespace Hsinpa.SSE
             sceneLayoutStruct.frame_height = frame_height;
             sceneLayoutStruct.frame_width = frame_width;
 
-            sceneLayoutStruct.screen_height = Screen.height;
-            sceneLayoutStruct.screen_width = Screen.width;
-
             sceneLayoutStruct.name = scene_name;
             sceneLayoutStruct.spriteLayoutStructs = layouts;
 
