@@ -10,6 +10,12 @@ namespace Hsinpa.SSE {
         [TextArea(15, 20)]
         public string Properties;       
         
-        public string MinimizeProperties => Properties.Replace(" " , "").Replace("\n", "");
+        public string MinimizeProperties {
+            get {
+                if (Properties == null) return "";
+
+                return Properties.Replace(" ", "").Replace("\n", "");
+            } 
+        }
     }
 }

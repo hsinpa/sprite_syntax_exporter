@@ -137,7 +137,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.11151557, y: 0.48098373}
+      pivot: {x: 0.11638638, y: 0.48570633}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +178,7 @@ TextureImporter:
         y: 960
         width: 64
         height: 64
-      alignment: 9
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -241,8 +241,8 @@ TextureImporter:
         y: 960
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.51135015, y: 0.09707928}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,8 +262,8 @@ TextureImporter:
         y: 896
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48066437, y: 0.11650658}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,6 +296,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pinball_wall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80475f3848c46d2419628852261b160b
+      internalID: 787074411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinball_cuve
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdc6b565ec53b44cb178522bc9f9d45
+      internalID: 519621328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -309,12 +351,14 @@ TextureImporter:
     nameFileIdTable:
       pinball: 987345576
       pinball_bumper: -719237994
+      pinball_cuve: 519621328
       pinball_drop_target_a: 946708488
       pinball_drop_target_b: 911716408
       pinball_flipper: 2144834260
       pinball_shooter: -1078103056
       pinball_side_bumper: 1919100207
       pinball_sprite_5: -246436389
+      pinball_wall: 787074411
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

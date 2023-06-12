@@ -11,7 +11,7 @@ namespace Hsinpa.SSE
         public SpriteSyntaxStatic.CollisionType type;
 
         public SpriteSyntaxStatic.LineCollision lineCollision = new SpriteSyntaxStatic.LineCollision();
-        public SpriteSyntaxStatic.RectCollision rectCollision = new SpriteSyntaxStatic.RectCollision();
+        public SpriteSyntaxStatic.RectCollision                                                                    rectCollision = new SpriteSyntaxStatic.RectCollision();
         public SpriteSyntaxStatic.OvalCollision ovalCollision = new SpriteSyntaxStatic.OvalCollision();
         public SpriteSyntaxStatic.SphereCollision sphereCollision = new SpriteSyntaxStatic.SphereCollision();
 
@@ -122,11 +122,17 @@ namespace Hsinpa.SSE
             Vector3 sphere_b_pos = m.MultiplyPoint3x4(sphere_b) + t_position;
             Gizmos.DrawWireSphere(sphere_b_pos, ovalCollision.sphere_b.radius);
 
+
+            Vector3 direction = (sphere_a_pos - sphere_b_pos).normalized;
+            direction.Set(direction.y, -direction.x, 0);
+
+            Debug.Log(direction);
+
             //Top Line
-            Vector3 line_point_a = m.MultiplyPoint3x4(sphere_a + (Vector3.up * ovalCollision.sphere_a.radius)) + t_position;
-            Vector3 line_point_b = m.MultiplyPoint3x4(sphere_a + (-Vector3.up * ovalCollision.sphere_a.radius)) + t_position;
-            Vector3 line_point_c = m.MultiplyPoint3x4(sphere_b + (Vector3.up * ovalCollision.sphere_b.radius)) + t_position;
-            Vector3 line_point_d = m.MultiplyPoint3x4(sphere_b + (-Vector3.up * ovalCollision.sphere_b.radius)) + t_position;
+            Vector3 line_point_a = m.MultiplyPoint3x4(sphere_a + (direction * ovalCollision.sphere_a.radius)) + t_position;
+            Vector3 line_point_b = m.MultiplyPoint3x4(sphere_a + (-direction * ovalCollision.sphere_a.radius)) + t_position;
+            Vector3 line_point_c = m.MultiplyPoint3x4(sphere_b + (direction * ovalCollision.sphere_b.radius)) + t_position;
+            Vector3 line_point_d = m.MultiplyPoint3x4(sphere_b + (-direction * ovalCollision.sphere_b.radius)) + t_position;
 
             Gizmos.color = Color.green;
             Gizmos.DrawLine(line_point_a, line_point_b);
