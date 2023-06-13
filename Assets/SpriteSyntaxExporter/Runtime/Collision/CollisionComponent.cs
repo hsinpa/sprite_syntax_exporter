@@ -126,8 +126,6 @@ namespace Hsinpa.SSE
             Vector3 direction = (sphere_a_pos - sphere_b_pos).normalized;
             direction.Set(direction.y, -direction.x, 0);
 
-            Debug.Log(direction);
-
             //Top Line
             Vector3 line_point_a = m.MultiplyPoint3x4(sphere_a + (direction * ovalCollision.sphere_a.radius)) + t_position;
             Vector3 line_point_b = m.MultiplyPoint3x4(sphere_a + (-direction * ovalCollision.sphere_a.radius)) + t_position;
