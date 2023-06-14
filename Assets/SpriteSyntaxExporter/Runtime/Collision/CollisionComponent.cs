@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,14 +12,16 @@ namespace Hsinpa.SSE
         public SpriteSyntaxStatic.CollisionType type;
 
         public SpriteSyntaxStatic.LineCollision lineCollision = new SpriteSyntaxStatic.LineCollision();
-        public SpriteSyntaxStatic.RectCollision                                                                    rectCollision = new SpriteSyntaxStatic.RectCollision();
+        public SpriteSyntaxStatic.RectCollision rectCollision = new SpriteSyntaxStatic.RectCollision();
         public SpriteSyntaxStatic.OvalCollision ovalCollision = new SpriteSyntaxStatic.OvalCollision();
         public SpriteSyntaxStatic.SphereCollision sphereCollision = new SpriteSyntaxStatic.SphereCollision();
+        public SpriteSyntaxStatic.PolyLineCollision polylineCollision = new SpriteSyntaxStatic.PolyLineCollision();
+        public SpriteSyntaxStatic.PolyLineEditorStruct polylineEditorStruct= new SpriteSyntaxStatic.PolyLineEditorStruct();
 
         private void Start()
         {
             var c = GetCollisionStruct();
-            Debug.Log(c.data);
+
         }
 
         public SpriteSyntaxStatic.CollisionStruct GetCollisionStruct() {
@@ -42,6 +45,9 @@ namespace Hsinpa.SSE
                 case SpriteSyntaxStatic.CollisionType.Oval:
                     return callback(ovalCollision as T);
 
+                case SpriteSyntaxStatic.CollisionType.Polyline:
+                    return callback(polylineCollision as T);
+
                 default:
                     return callback(sphereCollision as T);
             }
@@ -64,6 +70,12 @@ namespace Hsinpa.SSE
                 case SpriteSyntaxStatic.CollisionType.Sphere:
                     DrawSphereGizmos(sphereCollision);
                     break;
+
+                case SpriteSyntaxStatic.CollisionType.Polyline:
+                    DrawPolylineGizmos(polylineCollision);
+                    break;
+
+
             }
         }
 
@@ -146,6 +158,29 @@ namespace Hsinpa.SSE
             Vector3 sphere_a = new Vector3(sphereCollision.x, sphereCollision.y, 0);
             Vector3 sphere_a_pos = m.MultiplyPoint3x4(sphere_a) + this.transform.position;
             Gizmos.DrawWireSphere(sphere_a_pos, sphereCollision.radius);
+        }
+
+        private void DrawPolylineGizmos(SpriteSyntaxStatic.PolyLineCollision polylineCollision) {
+            if (polylineCollision.points == null) return;
+
+
+            int lens = polylineCollision.points.Count;
+            Vector3 world_position = this.transform.position;
+            Vector3 dynamic_position = new Vector3();
+            Vector3 dynamic_2_position = new Vector3();
+            var m = Matrix4x4.Rotate(this.transform.rotation);
+
+            Vector3 mouse_position = Event.current.mousePosition;
+            Camera camera = Camera.main;
+
+            for (int i = 0; i < lens; i++) {
+                dynamic_position.Set(polylineCollision.points[i].x, polylineCollision.points[i].y, 0);
+
+                dynamic_position = m.MultiplyPoint3x4(dynamic_position) + world_position;
+
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireSphere(dynamic_position, 0.1f);
+            }
         }
     }
 }

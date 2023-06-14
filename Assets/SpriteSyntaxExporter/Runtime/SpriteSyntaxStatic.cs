@@ -74,7 +74,7 @@ namespace Hsinpa.SSE
         }
 
         #region Collisoion
-        public enum CollisionType { Line, Rect, Oval, Sphere }
+        public enum CollisionType { Line, Rect, Oval, Sphere, Polyline }
 
         [System.Serializable]
         public struct CollisionStruct {
@@ -111,6 +111,21 @@ namespace Hsinpa.SSE
             public float x;
             public float y;
             public float radius;
+        }
+
+        [System.Serializable]
+        public struct PolyLineCollision
+        {
+            public List<Vector2> points;
+        }
+
+
+        [System.Serializable]
+        public struct PolyLineEditorStruct
+        {
+            public int ctrl_point_index;
+            public Vector3 mouse_position;
+
         }
 
         [System.Serializable]

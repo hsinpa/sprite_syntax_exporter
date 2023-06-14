@@ -355,6 +355,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.4
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!1 &71648965
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +494,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &71648970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +566,7 @@ GameObject:
   - component: {fileID: 142917568}
   - component: {fileID: 142917567}
   - component: {fileID: 142917569}
+  - component: {fileID: 142917570}
   m_Layer: 0
   m_Name: pinball_cuve
   m_TagString: Untagged
@@ -622,14 +633,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142917566}
-  m_LocalRotation: {x: -0, y: -0, z: 0.054219045, w: 0.99852914}
-  m_LocalPosition: {x: 0.6129999, y: 5.386, z: -0.058000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.916, y: 4.948, z: -0.058000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1127541031}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &142917569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +654,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Properties: 
+--- !u!114 &142917570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142917566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3ca5b31b222b441be04b91a123ab5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  lineCollision:
+    point_a: {x: 0.17, y: 0}
+    point_b: {x: -0.39, y: 0.61}
+  rectCollision:
+    x: 0
+    y: 0
+    height: 0
+    width: 0
+  ovalCollision:
+    sphere_a:
+      x: 0
+      y: 0
+      radius: 0
+    sphere_b:
+      x: 0
+      y: 0
+      radius: 0
+  sphereCollision:
+    x: 0
+    y: 0
+    radius: 0
+  polylineCollision:
+    points:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+  polylineEditorStruct:
+    ctrl_point_index: -1
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!1 &209704311
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +763,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &209704314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,6 +899,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.13
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!212 &212111763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1029,6 +1091,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.13
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &539099840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,6 +1162,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.4
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &642506351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,6 +1328,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!1 &833155827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1454,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &833155831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,6 +1632,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1007597049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,6 +1806,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1017195279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1900,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1127541033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,6 +2181,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1511607624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,6 +2363,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.13
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!212 &1664670702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2506,6 +2613,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!1 &1741472729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2671,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0.4
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1741472731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2633,7 +2750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741472729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 1.96, z: 0}
+  m_LocalPosition: {x: 1.925, y: 2.324, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3003,6 +3120,11 @@ MonoBehaviour:
     x: 0
     y: 0
     radius: 0
+  polylineCollision:
+    points: []
+  polylineEditorStruct:
+    ctrl_point_index: 0
+    mouse_position: {x: 0, y: 0, z: 0}
 --- !u!1 &2032411597
 GameObject:
   m_ObjectHideFlags: 0
